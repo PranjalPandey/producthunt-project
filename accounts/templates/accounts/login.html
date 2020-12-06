@@ -8,18 +8,34 @@
 <br />
 <br />
 {% endif %}
+<div class="container">
+<div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4>
+            <i class="fas fa-user-plus"></i> Login</h4>
+        </div>
+        <div class="card-body">
+          <!-- Alert -->
+          
 
-<h1>Login</h1>
-<form method="POST" actions="{% url 'login' %}">
-{% csrf_token %}
-Username:
-<br>
-<input type="text" name="username" />
-<br><br>
-Password:
-<br>
-<input type="password" name="password" />
-<br><br>
-<input class="btn btn-primary" type="submit" value="Login">
-</form>
+            <form method="POST" actions="{% url 'login' %}">
+                {% csrf_token %}
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" name="username" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password1">Password</label>
+                <input type="password" name="password" class="form-control" required>
+              </div>
+           
+            <input class="btn btn-primary" type="submit" value="Login">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
